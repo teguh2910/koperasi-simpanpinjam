@@ -137,6 +137,10 @@
     {{-- PWA Install Prompt --}}
     <script>
         let deferredPrompt = null;
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            var btn = document.getElementById('pwa-install-btn');
+            if (btn) btn.style.display = 'none';
+        }
         window.addEventListener('beforeinstallprompt', function(e) {
             e.preventDefault();
             deferredPrompt = e;
