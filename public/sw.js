@@ -1,13 +1,7 @@
 const CACHE_NAME = "koperasi-v1";
 
-const ASSETS = [
-    "/offline",
-];
-
 self.addEventListener("install", (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
-    );
+    self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
@@ -20,6 +14,11 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
     event.respondWith(
-        fetch(event.request).catch(() => caches.match(event.request).then((r) => r || caches.match("/offline")))
+        fetch(event.request).catch(() => {
+            return new Response("Anda sedang offline. Silakan coba lagi nanti.", {
+                status: 200,
+                headers: { "Content-Type": "text/plain; charset=utf-8" },
+            });
+        })
     );
 });

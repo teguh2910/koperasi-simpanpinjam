@@ -12,6 +12,7 @@
     {{-- PWA Meta Tags --}}
     <meta name="theme-color" content="#007bff">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Koperasi">
     <link rel="manifest" href="{{ asset('manifest.json') }}">

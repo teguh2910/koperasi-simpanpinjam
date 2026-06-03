@@ -171,15 +171,15 @@
 <script>
     $('#dashboard-savings-table').DataTable({
         responsive: true, autoWidth: false, paging: false, searching: false, info: false,
-        language: { url: '//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json' }
+        language: { url: '{{ asset('vendor/datatables/Indonesian.json') }}' }
     });
     $('#dashboard-loans-table').DataTable({
         responsive: true, autoWidth: false, paging: false, searching: false, info: false,
-        language: { url: '//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json' }
+        language: { url: '{{ asset('vendor/datatables/Indonesian.json') }}' }
     });
     $('#dashboard-shu-table').DataTable({
         responsive: true, autoWidth: false, paging: false, searching: false, info: false,
-        language: { url: '//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json' }
+        language: { url: '{{ asset('vendor/datatables/Indonesian.json') }}' }
     });
 </script>
 @endpush

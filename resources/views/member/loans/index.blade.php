@@ -64,7 +64,7 @@
 <script>
     $('#member-loans-table').DataTable({
         responsive: true, autoWidth: false, order: [[1, 'desc']],
-        language: { url: '//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json' }
+        language: { url: '{{ asset('vendor/datatables/Indonesian.json') }}' }
     });
 </script>
 @endpush
