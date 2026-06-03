@@ -134,6 +134,35 @@
         }
     </script>
 
+    {{-- PWA Install Prompt --}}
+    <script>
+        let deferredPrompt = null;
+        window.addEventListener('beforeinstallprompt', function(e) {
+            e.preventDefault();
+            deferredPrompt = e;
+            var btn = document.getElementById('pwa-install-btn');
+            if (btn) btn.style.display = 'flex';
+        });
+        window.addEventListener('appinstalled', function() {
+            deferredPrompt = null;
+            var btn = document.getElementById('pwa-install-btn');
+            if (btn) btn.style.display = 'none';
+        });
+        function installPWA() {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(function(choiceResult) {
+                deferredPrompt = null;
+                document.getElementById('pwa-install-btn').style.display = 'none';
+            });
+        }
+    </script>
+
+    {{-- PWA Install Floating Button --}}
+    <button id="pwa-install-btn" onclick="installPWA()" style="display:none;position:fixed;bottom:20px;right:20px;z-index:9999;background:#007bff;color:#fff;border:none;border-radius:50px;padding:12px 20px;font-size:14px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);align-items:center;gap:8px;">
+        <i class="fas fa-download"></i> Install App
+    </button>
+
     {{-- Custom Scripts --}}
     @yield('adminlte_js')
 
