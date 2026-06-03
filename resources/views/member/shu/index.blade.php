@@ -54,9 +54,9 @@
                             </div>
                         </div>
                     </div>
-                    <table class="table table-bordered">
+                    <div class="table-responsive"><table class="table table-bordered">
                         <tr>
-                            <th style="width:40%">Simpanan Anda</th>
+                            <th>Simpanan Anda</th>
                             <td>Rp {{ number_format($member->savings_balance, 0, ',', '.') }}</td>
                             <td>Kontribusi: {{ number_format($member->savings_percent, 2) }}%</td>
                         </tr>
@@ -65,7 +65,7 @@
                             <td>Rp {{ number_format($member->loan_interest_paid, 0, ',', '.') }}</td>
                             <td>Kontribusi: {{ number_format($member->loan_percent, 2) }}%</td>
                         </tr>
-                    </table>
+                    </table></div>
                 @else
                     <p class="text-muted mb-0">Anda tidak mendapatkan SHU pada periode ini.</p>
                 @endif

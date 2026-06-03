@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="card-body p-0">
-            <table id="dashboard-savings-table" class="table table-striped mb-0">
+            <div class="table-responsive"><table id="dashboard-savings-table" class="table table-striped mb-0">
                 <thead>
                     <tr>
                         <th>Jenis</th>
@@ -82,7 +82,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 
@@ -94,7 +94,7 @@
             </div>
         </div>
         <div class="card-body p-0">
-            <table id="dashboard-loans-table" class="table table-striped mb-0">
+            <div class="table-responsive"><table id="dashboard-loans-table" class="table table-striped mb-0">
                 <thead>
                     <tr>
                         <th>Jumlah</th>
@@ -125,7 +125,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 
@@ -137,7 +137,7 @@
             </div>
         </div>
         <div class="card-body p-0">
-            <table id="dashboard-shu-table" class="table table-striped mb-0">
+            <div class="table-responsive"><table id="dashboard-shu-table" class="table table-striped mb-0">
                 <thead>
                     <tr>
                         <th>Periode</th>
@@ -162,7 +162,7 @@
                         </tr>
                     @endforelse
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 @endsection

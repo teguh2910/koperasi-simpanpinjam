@@ -11,13 +11,13 @@
 
 @section('content')
     <div class="row mb-3">
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-4 col-12">
             <div class="small-box bg-success"><div class="inner"><h3>Rp {{ number_format($totals->deposits, 0, ',', '.') }}</h3><p>Total Setoran</p></div><div class="icon"><i class="fas fa-arrow-down"></i></div></div>
         </div>
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-4 col-12">
             <div class="small-box bg-danger"><div class="inner"><h3>Rp {{ number_format($totals->withdrawals, 0, ',', '.') }}</h3><p>Total Penarikan</p></div><div class="icon"><i class="fas fa-arrow-up"></i></div></div>
         </div>
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-4 col-12">
             <div class="small-box bg-info"><div class="inner"><h3>{{ $totals->count }}</h3><p>Jumlah Transaksi</p></div><div class="icon"><i class="fas fa-exchange-alt"></i></div></div>
         </div>
     </div>
@@ -63,7 +63,7 @@
                 <button class="btn btn-primary"><i class="fas fa-filter mr-1"></i>Filter</button>
                 <a href="{{ route('admin.reports.savings') }}" class="btn btn-default">Reset</a>
             </form>
-            <table id="savings-table" class="table table-striped">
+            <div class="table-responsive"><table id="savings-table" class="table table-striped">
                 <thead>
                     <tr>
                         <th>Tanggal</th>
@@ -88,7 +88,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 @stop

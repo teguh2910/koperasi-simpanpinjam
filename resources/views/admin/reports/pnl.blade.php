@@ -122,7 +122,7 @@
             <h3 class="card-title"><i class="fas fa-calendar-day mr-2"></i>Rincian Harian</h3>
         </div>
         <div class="card-body p-0">
-            <table id="daily-table" class="table table-striped mb-0">
+            <div class="table-responsive"><table id="daily-table" class="table table-striped mb-0">
                 <thead>
                     <tr>
                         <th>Tanggal</th>
@@ -141,7 +141,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
     @endif

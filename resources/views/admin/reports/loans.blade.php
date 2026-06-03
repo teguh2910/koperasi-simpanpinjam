@@ -11,16 +11,16 @@
 
 @section('content')
     <div class="row mb-3">
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-3 col-12">
             <div class="small-box bg-info"><div class="inner"><h3>{{ $totals->count }}</h3><p>Total Pinjaman</p></div><div class="icon"><i class="fas fa-file-invoice"></i></div></div>
         </div>
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-3 col-12">
             <div class="small-box bg-primary"><div class="inner"><h3>Rp {{ number_format($totals->disbursed, 0, ',', '.') }}</h3><p>Total Dicairkan</p></div><div class="icon"><i class="fas fa-money-bill-wave"></i></div></div>
         </div>
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-3 col-12">
             <div class="small-box bg-success"><div class="inner"><h3>Rp {{ number_format($totals->paid, 0, ',', '.') }}</h3><p>Total Terbayar</p></div><div class="icon"><i class="fas fa-check-circle"></i></div></div>
         </div>
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-3 col-12">
             <div class="small-box bg-warning"><div class="inner"><h3>Rp {{ number_format($totals->outstanding, 0, ',', '.') }}</h3><p>Sisa Pinjaman</p></div><div class="icon"><i class="fas fa-hourglass-half"></i></div></div>
         </div>
     </div>
@@ -69,7 +69,7 @@
                 <button class="btn btn-primary"><i class="fas fa-filter mr-1"></i>Filter</button>
                 <a href="{{ route('admin.reports.loans') }}" class="btn btn-default">Reset</a>
             </form>
-            <table id="loans-table" class="table table-striped">
+            <div class="table-responsive"><table id="loans-table" class="table table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -109,7 +109,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 @stop

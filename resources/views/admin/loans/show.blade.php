@@ -114,7 +114,7 @@
                     <h3 class="card-title"><i class="fas fa-calendar-alt mr-2"></i>Jadwal Pembayaran</h3>
                 </div>
                 <div class="card-body p-0">
-                    <table id="payment-schedule-table" class="table table-striped mb-0">
+                    <div class="table-responsive"><table id="payment-schedule-table" class="table table-striped mb-0">
                         <thead>
                             <tr>
                                 <th>Bulan ke-</th>
@@ -143,7 +143,7 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                    </table>
+                    </table></div>
                 </div>
             </div>
         </div>

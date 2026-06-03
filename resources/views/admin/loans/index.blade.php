@@ -67,7 +67,7 @@
                                     @elseif($loan->status == 'approved')
                                         <form method="POST" action="{{ route('admin.loans.disburse', $loan) }}" class="d-inline">
                                             @csrf @method('PUT')
-                                            <input type="date" name="disbursed_at" class="form-control form-control-sm d-inline-block" style="width:140px" value="{{ date('Y-m-d') }}" required>
+                                            <input type="date" name="disbursed_at" class="form-control form-control-sm d-inline-block mw-100" style="width:auto;min-width:140px" value="{{ date('Y-m-d') }}" required>
                                             <button class="btn btn-sm btn-primary">Cairkan</button>
                                         </form>
                                     @endif

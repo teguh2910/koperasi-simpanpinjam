@@ -89,7 +89,7 @@
         <div class="card-header bg-info">
             <h3 class="card-title text-white"><i class="fas fa-chart-pie mr-2"></i>Ringkasan</h3>
         </div>
-        <table class="table table-striped mb-0">
+        <div class="table-responsive"><table class="table table-striped mb-0">
             <tr>
                 <th style="width: 50%">Total Anggota</th>
                 <td class="text-right">{{ $recap->total_members }} orang</td>
@@ -102,6 +102,6 @@
                 <th>Dana Kelolaan (Simpanan + Piutang)</th>
                 <td class="text-right">Rp {{ number_format($recap->net_savings + $recap->total_outstanding, 0, ',', '.') }}</td>
             </tr>
-        </table>
+        </table></div>
     </div>
 @stop

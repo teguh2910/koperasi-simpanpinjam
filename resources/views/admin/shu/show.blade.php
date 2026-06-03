@@ -60,7 +60,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-12">
                             <div class="small-box bg-success">
                                 <div class="inner">
                                     <h3>Rp {{ number_format($interestIncome, 0, ',', '.') }}</h3>
@@ -69,7 +69,7 @@
                                 <div class="icon"><i class="fas fa-coins"></i></div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-12">
                             <div class="small-box bg-danger">
                                 <div class="inner">
                                     <h3>Rp {{ number_format($totalExpenses, 0, ',', '.') }}</h3>
@@ -78,7 +78,7 @@
                                 <div class="icon"><i class="fas fa-receipt"></i></div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-4 col-12">
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h3>Rp {{ number_format($interestIncome - $totalExpenses, 0, ',', '.') }}</h3>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-12">
                             <div class="small-box bg-warning">
                                 <div class="inner">
                                     <h3>Rp {{ number_format($shuPeriod->total_profit, 0, ',', '.') }}</h3>
@@ -110,7 +110,7 @@
                                 <div class="icon"><i class="fas fa-calculator"></i></div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-12">
                             <div class="small-box bg-primary">
                                 <div class="inner">
                                     <h3>{{ $shuPeriod->member_share_percent }}%</h3>
@@ -119,7 +119,7 @@
                                 <div class="icon"><i class="fas fa-percentage"></i></div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-12">
                             <div class="small-box bg-success">
                                 <div class="inner">
                                     <h3>Rp {{ number_format($shuPeriod->total_shu, 0, ',', '.') }}</h3>
@@ -128,7 +128,7 @@
                                 <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-12">
                             <div class="small-box bg-secondary">
                                 <div class="inner">
                                     <h3>Rp {{ number_format($retainedEarnings, 0, ',', '.') }}</h3>

@@ -11,13 +11,13 @@
 
 @section('content')
     <div class="row mb-3">
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-4 col-12">
             <div class="small-box bg-info"><div class="inner"><h3>{{ $totals->members }}</h3><p>Total Anggota</p></div><div class="icon"><i class="fas fa-users"></i></div></div>
         </div>
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-4 col-12">
             <div class="small-box bg-success"><div class="inner"><h3>Rp {{ number_format($totals->savings, 0, ',', '.') }}</h3><p>Total Simpanan</p></div><div class="icon"><i class="fas fa-piggy-bank"></i></div></div>
         </div>
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-4 col-12">
             <div class="small-box bg-warning"><div class="inner"><h3>Rp {{ number_format($totals->loans, 0, ',', '.') }}</h3><p>Total Pinjaman Aktif</p></div><div class="icon"><i class="fas fa-hand-holding-usd"></i></div></div>
         </div>
     </div>
@@ -25,14 +25,14 @@
     <div class="card">
         <div class="card-body">
             <form method="GET" class="mb-3">
-                <div class="input-group" style="max-width: 300px;">
+                <div class="input-group mw-100">
                     <input type="text" name="search" class="form-control" placeholder="Cari anggota..." value="{{ request('search') }}">
                     <div class="input-group-append">
                         <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </form>
-            <table id="members-table" class="table table-striped">
+            <div class="table-responsive"><table id="members-table" class="table table-striped">
                 <thead>
                     <tr>
                         <th>Nama</th>
@@ -55,7 +55,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 @stop
