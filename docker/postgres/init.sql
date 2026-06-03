@@ -1,0 +1,2 @@
+-- Initial database setup for koperasi simpan pinjam
+-- Users table will be created by Laravel migrations

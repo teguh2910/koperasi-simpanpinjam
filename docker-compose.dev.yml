@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - XDEBUG_MODE=develop,debug
+
+  # Mailhog for email testing
+  mailhog:
+    image: mailhog/mailhog
+    container_name: koperasi_mailhog
+    restart: unless-stopped
+    ports:
+      - "8025:8025"
+    networks:
+      - koperasi_network
+
+networks:
+  koperasi_network:
+    external: true

@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  composer:
+    image: composer:latest
+    container_name: koperasi_composer
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    command: composer install --no-interaction
+    depends_on:
+      - app
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: koperasi_app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - koperasi_network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    container_name: koperasi_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: koperasi_db
+      POSTGRES_USER: koperasi_user
+      POSTGRES_PASSWORD: secretpassword
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - koperasi_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: koperasi_nginx
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx:/etc/nginx/conf.d
+    ports:
+      - "8080:80"
+    networks:
+      - koperasi_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: koperasi_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - koperasi_network
+
+networks:
+  koperasi_network:
+    driver: bridge
+
+volumes:
+  db_data:
+  pgadmin_data:
